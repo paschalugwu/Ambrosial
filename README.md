@@ -1,5 +1,6 @@
 # Project Name and Tagline
 **Ambrosial Recipe Sharing Website: A Culinary Community**
+
 *Tagline:* Unleash your inner chef, share your culinary masterpieces, and discover new recipes from around the world.
 
 ## Team
