@@ -2,7 +2,7 @@
 
 This project consists of a Flask web application that showcases a our Ambrosial website. Below, we'll break down each component and its significance in building the application.
 
-![02-Templates](https://github.com/paschalugwu/Ambrosial/raw/main/02-Templates/images/02-Templates.png)
+![02-Templates](https://github.com/paschalugwu/Ambrosial/blob/main/images/02-Templates.png)
 
 ## flask_ambrosial.py
 - **Flask Initialization:** This file hosts our Flask application.
