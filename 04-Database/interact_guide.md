@@ -1,6 +1,11 @@
 # Here's a guide on how you can use sqlite3 to interact with your database:
 
 ```python
+# Set up an application context using app.app_context()
+with app.app_context():
+    # Create the database tables
+    db.create_all()
+
 import os
 import sqlite3
 
