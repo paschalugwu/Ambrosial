@@ -2,7 +2,7 @@
 
 ```python
 # Import necessary packages
-from flask_ambrosial import db
+from flask_ambrosial import db, app
 from flask_ambrosial.models import User, Post
 
 # Set up an application context using app.app_context()
