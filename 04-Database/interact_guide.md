@@ -1,6 +1,10 @@
 # Here's a guide on how you can use sqlite3 to interact with your database:
 
 ```python
+# Import necessary packages
+from flask_ambrosial import db
+from flask_ambrosial.models import User, Post
+
 # Set up an application context using app.app_context()
 with app.app_context():
     # Create the database tables
