@@ -1,7 +1,10 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 from flask import Flask, render_template, url_for
+
+# Initialize Flask app
 app = Flask(__name__)
 
+# Sample data of posts
 posts = [
     {
         'author': 'Ugwu Paschal',
@@ -17,17 +20,27 @@ posts = [
     }
 ]
 
-
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', posts=posts)
+    """
+    Route handler for the home page.
 
+    Returns:
+        Rendered HTML template (home.html) with posts data passed as context.
+    """
+    return render_template('home.html', posts=posts)
 
 @app.route("/about")
 def about():
+    """
+    Route handler for the about page.
+
+    Returns:
+        Rendered HTML template (about.html) with title passed as context.
+    """
     return render_template('about.html', title='About')
 
-
 if __name__ == '__main__':
+    # Run the Flask app in debug mode
     app.run(debug=True)
