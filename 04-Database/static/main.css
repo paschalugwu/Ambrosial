@@ -1,29 +1,38 @@
+/* CSS styles for the Flask app */
+
+/* General styling */
 body {
     background: #fafafa;
     color: #333333;
     margin-top: 5rem;
 }
-  
+
+/* Heading styles */
 h1, h2, h3, h4, h5, h6 {
     color: #444444;
 }
-  
+
+/* Background color for specific elements */
 .bg-steel {
     background-color: #702963;
 }
-  
+
+/* Navbar link styling */
 .site-header .navbar-nav .nav-link {
     color: #cbd5db;
 }
-  
+
+/* Hover effect for navbar links */
 .site-header .navbar-nav .nav-link:hover {
     color: #ffffff;
 }
-  
+
+/* Styling for active navbar links */
 .site-header .navbar-nav .nav-link.active {
     font-weight: 500;
 }
-  
+
+/* Styling for content sections */
 .content-section {
     background: #ffffff;
     padding: 10px 20px;
@@ -31,50 +40,59 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 3px;
     margin-bottom: 20px;
 }
-  
+
+/* Styling for article titles */
 .article-title {
     color: #444444;
 }
-  
+
+/* Hover effect for article titles */
 a.article-title:hover {
     color: #428bca;
     text-decoration: none;
 }
-  
+
+/* Styling for article content */
 .article-content {
     white-space: pre-line;
 }
-  
+
+/* Styling for article images */
 .article-img {
     height: 65px;
     width: 65px;
     margin-right: 16px;
 }
-  
+
+/* Styling for article metadata */
 .article-metadata {
     padding-bottom: 1px;
     margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    border-bottom: 1px solid #e3e3e3;
 }
-  
+
+/* Hover effect for article metadata links */
 .article-metadata a:hover {
     color: #333;
     text-decoration: none;
 }
-  
+
+/* Styling for article SVG icons */
 .article-svg {
     width: 25px;
     height: 25px;
     vertical-align: middle;
 }
-  
+
+/* Styling for account images */
 .account-img {
     height: 125px;
     width: 125px;
     margin-right: 20px;
     margin-bottom: 16px;
 }
-  
+
+/* Styling for account headings */
 .account-heading {
     font-size: 2.5rem;
 }
