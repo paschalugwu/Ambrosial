@@ -1,12 +1,20 @@
 {% extends "layout.html" %}
+
 {% block content %}
+    <!-- Login form section -->
     <div class="content-section">
+        <!-- Form for user login -->
         <form method="POST" action="">
+            <!-- CSRF token field -->
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
+                <!-- Legend for the form -->
                 <legend class="border-bottom mb-4">Log In</legend>
+                <!-- Email field -->
                 <div class="form-group">
+                    <!-- Label for email field -->
                     {{ form.email.label(class="form-control-label") }}
+                    <!-- Display email input with error messages if any -->
                     {% if form.email.errors %}
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -18,8 +26,11 @@
                         {{ form.email(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!-- Password field -->
                 <div class="form-group">
+                    <!-- Label for password field -->
                     {{ form.password.label(class="form-control-label") }}
+                    <!-- Display password input with error messages if any -->
                     {% if form.password.errors %}
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -31,19 +42,23 @@
                         {{ form.password(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
+                <!-- Remember Me checkbox -->
                 <div class="form-check">
                     {{ form.remember(class="form-check-input") }}
                     {{ form.remember.label(class="form-check-label") }}
                 </div>
             </fieldset>
+            <!-- Submit button -->
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
+            <!-- Link for forgot password -->
             <small class="text-muted ml-2">
                 <a href="#">Forgot Password?</a>
             </small>
         </form>
     </div>
+    <!-- Link for registration -->
     <div class="border-top pt-3">
         <small class="text-muted">
             Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
