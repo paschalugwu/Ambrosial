@@ -20,6 +20,7 @@ posts = [
     }
 ]
 
+
 @app.route("/")
 @app.route("/home")
 def home():
@@ -31,6 +32,7 @@ def home():
     """
     return render_template('home.html', posts=posts)
 
+
 @app.route("/about")
 def about():
     """
@@ -40,6 +42,7 @@ def about():
         Rendered HTML template (about.html) with title passed as context.
     """
     return render_template('about.html', title='About')
+
 
 if __name__ == '__main__':
     # Run the Flask app in debug mode
