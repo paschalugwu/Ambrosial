@@ -1,13 +1,21 @@
+<!-- Template for rendering posts on the home page of the Flask app -->
+
 {% extends "layout.html" %}
+
 {% block content %}
+    <!-- Content block for rendering posts -->
     {% for post in posts %}
+        <!-- Loop through each post -->
         <article class="media content-section">
           <div class="media-body">
+            <!-- Display author and date posted -->
             <div class="article-metadata">
               <a class="mr-2" href="#">{{ post.author }}</a>
               <small class="text-muted">{{ post.date_posted }}</small>
             </div>
+            <!-- Display post title -->
             <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <!-- Display post content -->
             <p class="article-content">{{ post.content }}</p>
           </div>
         </article>
