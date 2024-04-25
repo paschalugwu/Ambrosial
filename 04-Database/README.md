@@ -2,6 +2,7 @@
 
 Ambrosial is a web application built with Flask, a lightweight Python web framework. It allows users to register, log in, and view posts about cooking recipes. The application utilizes SQLAlchemy for database management and WTForms for form validation.
 
+```
 .
 ├── README.md
 ├── flask_ambrosial.py
@@ -17,6 +18,7 @@ Ambrosial is a web application built with Flask, a lightweight Python web framew
     ├── layout.html
     ├── login.html
     └── register.html
+```
 
 ## Functionality
 
