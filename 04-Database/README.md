@@ -1,34 +1,66 @@
-# Ambrosial Flask Application - Forms and Validation
+# Ambrosial
 
-This is a simple Flask application named 'Ambrosial'. It consists of several HTML templates, a CSS file for styling, and Python scripts for backend logic.
+Ambrosial is a web application built with Flask, a lightweight Python web framework. It allows users to register, log in, and view posts about cooking recipes. The application utilizes SQLAlchemy for database management and WTForms for form validation.
 
-![04-Database](https://github.com/paschalugwu/Ambrosial/blob/main/images/O4-Database.png)
+.
+├── README.md
+├── flask_ambrosial.py
+├── forms.py
+├── instance
+│   └── site.db
+├── interact_guide.md
+├── static
+│   └── main.css
+└── templates
+    ├── about.html
+    ├── home.html
+    ├── layout.html
+    ├── login.html
+    └── register.html
 
-## Application Structure
+## Functionality
 
-The application is structured as follows:
+- **Registration**: Users can create an account by providing a username, email, and password. Upon successful registration, users receive a confirmation message and are redirected to the home page.
 
-- `flask_ambrosial.py`: This is the main Python script that runs the Flask application. It defines the routes for the application and the logic for each route.
+- **Login**: Registered users can log in using their email and password. Upon successful login, users receive a confirmation message and are redirected to the home page.
 
-- `forms.py`: This Python script defines the forms used in the application, including the registration and login forms.
+- **Home Page**: The home page displays a list of cooking recipe posts. Each post includes the author's name, title, content, and date posted.
 
-- `main.css`: This is the CSS file that contains the styles for the application.
+- **About Page**: The about page provides information about the Ambrosial web application.
 
-- HTML Templates: The application uses several HTML templates, all of which extend a base layout. These templates include:
-    - `layout.html`: This is the base layout for the application. All other templates extend this layout.
-    - `home.html`: This template displays the home page of the application, which includes a list of posts.
-    - `about.html`: This template displays the about page of the application.
-    - `login.html`: This template displays the login form.
-    - `register.html`: This template displays the registration form.
+## File Structure
 
-## How the Components Interact
+- **flask_ambrosial.py**: Contains the main Flask application code, including route definitions, database models, and form handling.
 
-When a user navigates to a route in the application, the corresponding function in `flask_ambrosial.py` is executed. This function may render a template, which will be filled with any necessary data and sent back to the user's browser.
+- **forms.py**: Defines Flask-WTF forms for user registration and login.
 
-For example, when a user navigates to the home page, the `home()` function is executed. This function renders the `home.html` template and passes in a list of posts. The `home.html` template extends the `layout.html` template, so the final HTML sent to the user's browser includes the content from both templates.
+- **instance/site.db**: SQLite database file where user and post data is stored.
 
-The `home.html` and `about.html` templates both use the `{% block content %}` tag to specify where in the `layout.html` template they should be inserted.
+- **static/main.css**: CSS stylesheet for styling the web application.
 
-The `login.html` and `register.html` templates both use forms defined in `forms.py`. When a user submits one of these forms, the corresponding function in `flask_ambrosial.py` validates the form data and either redirects the user or re-renders the form with error messages.
+- **templates/**:
+  - **about.html**: HTML template for the about page.
+  - **home.html**: HTML template for the home page, displaying posts.
+  - **layout.html**: Base HTML template containing the overall structure of the application layout.
+  - **login.html**: HTML template for the login page.
+  - **register.html**: HTML template for the registration page.
 
-The `main.css` file contains styles that are applied to the HTML sent to the user's browser. This file is linked in the `layout.html` template, so its styles are applied to all pages in the application.
+## Interactions
+
+- **flask_ambrosial.py**: This file contains the main Flask application code, defining routes for the home page, about page, user registration, and login. It also defines SQLAlchemy database models for users and posts.
+
+- **forms.py**: Defines Flask-WTF forms for user registration and login, including validation logic for username, email, and password fields.
+
+- **instance/site.db**: SQLite database file where user and post data is stored. The database schema is defined by the SQLAlchemy models in flask_ambrosial.py.
+
+- **static/main.css**: CSS stylesheet for styling the web application, providing a visually appealing interface.
+
+- **templates/**: Contains HTML templates for different pages of the web application, including the home page, about page, registration page, and login page.
+
+## Behaviors
+
+- When a user visits the home page ("/"), they can see a list of cooking recipe posts.
+- Users can navigate to the about page ("/about") to learn more about the Ambrosial web application.
+- New users can register for an account by visiting the registration page ("/register"). After successful registration, they are redirected to the home page.
+- Registered users can log in using their credentials on the login page ("/login"). After successful login, they are redirected to the home page.
+- Upon successful login or registration, users receive a confirmation message displayed using flash messages.
