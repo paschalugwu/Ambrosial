@@ -13,7 +13,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 
 # Database configuration
-# Using SQLite for this example, 'site.db' will be created in the current directory
+# Using SQLite for this example, 'site.db' \
+# will be created in the current directory
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 # Create an SQLAlchemy database instance
@@ -34,7 +35,11 @@ login_manager.login_message_category = 'info'
 # Import routes module to ensure routes are registered
 from flask_ambrosial import routes
 
-# Note: The routes module must be imported after creating the Flask app
-# This is to avoid circular imports, as routes might need to import things from this file
-# By importing routes after creating the app, the app instance is already defined
-# and can be used in the routes module for defining the routes and their functionalities
+""" Note: The routes module must be imported after creating \
+    the Flask app
+- This is to avoid circular imports, as routes might need \
+    to import things from this file
+- By importing routes after creating the app, the app instance \
+    is already defined and can be used in the routes module for \
+        defining the routes and their functionalities
+"""
