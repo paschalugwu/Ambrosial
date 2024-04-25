@@ -1,15 +1,21 @@
 {% extends "layout.html" %}
+
 {% block content %}
+    <!-- Registration form -->
     <div class="content-section">
         <form method="POST" action="">
+            <!-- Include hidden fields for CSRF protection -->
             {{ form.hidden_tag() }}
+
+            <!-- Form fieldset for registration -->
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
                 <div class="form-group">
+                    <!-- Display username label and handle errors -->
                     {{ form.username.label(class="form-control-label") }}
-
                     {% if form.username.errors %}
                         {{ form.username(class="form-control form-control-lg is-invalid") }}
+                        <!-- Display error messages if any -->
                         <div class="invalid-feedback">
                             {% for error in form.username.errors %}
                                 <span>{{ error }}</span>
@@ -20,9 +26,11 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
+                    <!-- Display email label and handle errors -->
                     {{ form.email.label(class="form-control-label") }}
                     {% if form.email.errors %}
                         {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <!-- Display error messages if any -->
                         <div class="invalid-feedback">
                             {% for error in form.email.errors %}
                                 <span>{{ error }}</span>
@@ -33,9 +41,11 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
+                    <!-- Display password label and handle errors -->
                     {{ form.password.label(class="form-control-label") }}
                     {% if form.password.errors %}
                         {{ form.password(class="form-control form-control-lg is-invalid") }}
+                        <!-- Display error messages if any -->
                         <div class="invalid-feedback">
                             {% for error in form.password.errors %}
                                 <span>{{ error }}</span>
@@ -46,9 +56,11 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
+                    <!-- Display confirm password label and handle errors -->
                     {{ form.confirm_password.label(class="form-control-label") }}
                     {% if form.confirm_password.errors %}
                         {{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+                        <!-- Display error messages if any -->
                         <div class="invalid-feedback">
                             {% for error in form.confirm_password.errors %}
                                 <span>{{ error }}</span>
@@ -59,11 +71,14 @@
                     {% endif %}
                 </div>
             </fieldset>
+            <!-- Submit button -->
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info") }}
             </div>
         </form>
     </div>
+
+    <!-- Sign in link -->
     <div class="border-top pt-3">
         <small class="text-muted">
             Already Have An Account? <a class="ml-2" href="{{ url_for('login') }}">Sign In</a>
