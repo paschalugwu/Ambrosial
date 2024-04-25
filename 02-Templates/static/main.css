@@ -1,81 +1,96 @@
+/* Styling for the body element */
 body {
-    background: #fafafa;
-    color: #333333;
-    margin-top: 5rem;
+    background: #fafafa;  /* Background color */
+    color: #333333;  /* Text color */
+    margin-top: 5rem;  /* Margin from the top */
 }
-  
+
+/* Styling for heading elements (h1, h2, h3, h4, h5, h6) */
 h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #444444;  /* Text color */
 }
-  
+
+/* Background color for elements with class bg-steel */
 .bg-steel {
-    background-color: #5f788a;
+    background-color: #5f788a;  /* Background color */
 }
-  
+
+/* Styling for navigation links */
 .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #cbd5db;  /* Text color */
 }
-  
+
+/* Hover styling for navigation links */
 .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #ffffff;  /* Text color */
 }
-  
+
+/* Styling for active navigation links */
 .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
+    font-weight: 500;  /* Font weight */
 }
-  
+
+/* Styling for content sections */
 .content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
+    background: #ffffff;  /* Background color */
+    padding: 10px 20px;  /* Padding */
+    border: 1px solid #dddddd;  /* Border */
+    border-radius: 3px;  /* Border radius */
+    margin-bottom: 20px;  /* Margin bottom */
 }
-  
+
+/* Styling for article titles */
 .article-title {
-    color: #444444;
+    color: #444444;  /* Text color */
 }
-  
+
+/* Hover styling for article titles */
 a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
+    color: #428bca;  /* Text color */
+    text-decoration: none;  /* Remove underline */
 }
-  
+
+/* Styling for article content */
 .article-content {
-    white-space: pre-line;
+    white-space: pre-line;  /* Preserve line breaks */
 }
-  
+
+/* Styling for article images */
 .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
+    height: 65px;  /* Height */
+    width: 65px;  /* Width */
+    margin-right: 16px;  /* Margin right */
 }
-  
+
+/* Styling for article metadata */
 .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    padding-bottom: 1px;  /* Padding bottom */
+    margin-bottom: 4px;  /* Margin bottom */
+    border-bottom: 1px solid #e3e3e3;  /* Border bottom */
 }
-  
+
+/* Hover styling for article metadata links */
 .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
+    color: #333;  /* Text color */
+    text-decoration: none;  /* Remove underline */
 }
-  
+
+/* Styling for SVG images within articles */
 .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
+    width: 25px;  /* Width */
+    height: 25px;  /* Height */
+    vertical-align: middle;  /* Align vertically */
 }
-  
+
+/* Styling for account images */
 .account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
+    height: 125px;  /* Height */
+    width: 125px;  /* Width */
+    margin-right: 20px;  /* Margin right */
+    margin-bottom: 16px;  /* Margin bottom */
 }
-  
+
+/* Styling for account headings */
 .account-heading {
-    font-size: 2.5rem;
+    font-size: 2.5rem;  /* Font size */
 }
-  
