@@ -2,7 +2,18 @@
 
 This is a simple Flask application named 'Ambrosial'. It consists of several HTML templates, a CSS file for styling, and Python scripts for backend logic.
 
-![03-Forms-and-Validation](https://github.com/paschalugwu/Ambrosial/blob/main/images/03-Forms-and-Validation.png)
+├── README.md
+├── flask_ambrosial.py
+├── forms.py
+├── static
+│   └── main.css
+└── templates
+    ├── about.html
+    ├── home.html
+    ├── layout.html
+    ├── login.html
+    └── register.html
+
 
 ## Application Structure
 
