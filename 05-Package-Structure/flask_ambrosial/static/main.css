@@ -1,80 +1,96 @@
+/* Define the background color and text color for the entire body */
 body {
-    background: #fafafa;
-    color: #333333;
-    margin-top: 5rem;
+    background: #fafafa; /* light gray */
+    color: #333333; /* dark gray */
+    margin-top: 5rem; /* top margin of 5rem */
 }
-  
+
+/* Define text color for heading elements */
 h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #444444; /* dark gray */
 }
-  
+
+/* Define background color for elements with class bg-steel */
 .bg-steel {
-    background-color: #702963;
+    background-color: #702963; /* purple */
 }
-  
+
+/* Define text color for navbar links */
 .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #cbd5db; /* light gray */
 }
-  
+
+/* Define text color for navbar links on hover */
 .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #ffffff; /* white */
 }
-  
+
+/* Define font weight for active navbar links */
 .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
+    font-weight: 500; /* bold */
 }
-  
+
+/* Define styles for content sections */
 .content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
+    background: #ffffff; /* white */
+    padding: 10px 20px; /* padding of 10px top and bottom, 20px left and right */
+    border: 1px solid #dddddd; /* light gray border */
+    border-radius: 3px; /* border radius of 3px */
+    margin-bottom: 20px; /* bottom margin of 20px */
 }
-  
+
+/* Define styles for article titles */
 .article-title {
-    color: #444444;
+    color: #444444; /* dark gray */
 }
-  
+
+/* Define styles for article titles on hover */
 a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
+    color: #428bca; /* blue */
+    text-decoration: none; /* remove underline */
 }
-  
+
+/* Define styles for article content */
 .article-content {
-    white-space: pre-line;
+    white-space: pre-line; /* preserve line breaks */
 }
-  
+
+/* Define styles for article images */
 .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
+    height: 65px; /* height of 65px */
+    width: 65px; /* width of 65px */
+    margin-right: 16px; /* right margin of 16px */
 }
-  
+
+/* Define styles for article metadata */
 .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    padding-bottom: 1px; /* bottom padding of 1px */
+    margin-bottom: 4px; /* bottom margin of 4px */
+    border-bottom: 1px solid #e3e3e3; /* light gray border bottom */
 }
-  
+
+/* Define styles for article metadata links on hover */
 .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
+    color: #333; /* dark gray */
+    text-decoration: none; /* remove underline */
 }
-  
+
+/* Define styles for article SVG images */
 .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
+    width: 25px; /* width of 25px */
+    height: 25px; /* height of 25px */
+    vertical-align: middle; /* align vertically in the middle */
 }
-  
+
+/* Define styles for account images */
 .account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
+    height: 125px; /* height of 125px */
+    width: 125px; /* width of 125px */
+    margin-right: 20px; /* right margin of 20px */
+    margin-bottom: 16px; /* bottom margin of 16px */
 }
-  
+
+/* Define styles for account headings */
 .account-heading {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* font size of 2.5rem */
 }
