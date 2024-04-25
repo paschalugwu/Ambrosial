@@ -1,7 +1,7 @@
 # Flask Ambrosial Web Application
 
 This project consists of a Flask web application that showcases a our Ambrosial website. Below, we'll break down each component and its significance in building the application.
-
+```
 .
 ├── README.md
 ├── flask.ambrosial.py
@@ -11,7 +11,7 @@ This project consists of a Flask web application that showcases a our Ambrosial 
     ├── about.html
     ├── home.html
     └── layout.html
-
+```
 2 directories, 6 files
 
 ## flask_ambrosial.py
