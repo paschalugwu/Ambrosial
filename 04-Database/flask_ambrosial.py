@@ -113,7 +113,7 @@ def register():
     form = RegistrationForm()  # Creating an instance of the RegistrationForm
     if form.validate_on_submit():
         # Flashing a success message
-        flash(f'Account created for
+        flash(f'Account created for \
               {form.username.data}!', 'success')
         return redirect(url_for('home'))  # Redirecting to the home page
     # Rendering the register.html template
