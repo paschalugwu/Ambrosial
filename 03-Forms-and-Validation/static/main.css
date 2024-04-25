@@ -1,80 +1,88 @@
+/* CSS for Flask App */
+
+/* General Styles */
 body {
-    background: #fafafa;
-    color: #333333;
-    margin-top: 5rem;
+    background: #fafafa; /* Sets background color */
+    color: #333333; /* Sets text color */
+    margin-top: 5rem; /* Adds top margin */
 }
-  
+
+/* Header Styles */
 h1, h2, h3, h4, h5, h6 {
-    color: #444444;
+    color: #444444; /* Sets heading text color */
 }
-  
+
+/* Navigation Bar Styles */
 .bg-steel {
-    background-color: #702963;
+    background-color: #702963; /* Sets background color for navigation bar */
 }
-  
+
 .site-header .navbar-nav .nav-link {
-    color: #cbd5db;
+    color: #cbd5db; /* Sets color for navigation links */
 }
-  
+
 .site-header .navbar-nav .nav-link:hover {
-    color: #ffffff;
+    color: #ffffff; /* Sets color for navigation links on hover */
 }
-  
+
 .site-header .navbar-nav .nav-link.active {
-    font-weight: 500;
+    font-weight: 500; /* Sets font weight for active navigation link */
 }
-  
+
+/* Content Section Styles */
 .content-section {
-    background: #ffffff;
-    padding: 10px 20px;
-    border: 1px solid #dddddd;
-    border-radius: 3px;
-    margin-bottom: 20px;
+    background: #ffffff; /* Sets background color */
+    padding: 10px 20px; /* Adds padding */
+    border: 1px solid #dddddd; /* Adds border */
+    border-radius: 3px; /* Adds border radius */
+    margin-bottom: 20px; /* Adds bottom margin */
 }
-  
+
+/* Article Styles */
 .article-title {
-    color: #444444;
+    color: #444444; /* Sets color for article title */
 }
-  
+
 a.article-title:hover {
-    color: #428bca;
-    text-decoration: none;
+    color: #428bca; /* Sets color for article title on hover */
+    text-decoration: none; /* Removes underline on hover */
 }
-  
+
 .article-content {
-    white-space: pre-line;
+    white-space: pre-line; /* Sets white space handling */
 }
-  
+
 .article-img {
-    height: 65px;
-    width: 65px;
-    margin-right: 16px;
+    height: 65px; /* Sets height for article image */
+    width: 65px; /* Sets width for article image */
+    margin-right: 16px; /* Adds right margin for article image */
 }
-  
+
 .article-metadata {
-    padding-bottom: 1px;
-    margin-bottom: 4px;
-    border-bottom: 1px solid #e3e3e3
+    padding-bottom: 1px; /* Adds bottom padding */
+    margin-bottom: 4px; /* Adds bottom margin */
+    border-bottom: 1px solid #e3e3e3; /* Adds bottom border */
 }
-  
+
 .article-metadata a:hover {
-    color: #333;
-    text-decoration: none;
+    color: #333; /* Sets color for article metadata on hover */
+    text-decoration: none; /* Removes underline on hover */
 }
-  
+
 .article-svg {
-    width: 25px;
-    height: 25px;
-    vertical-align: middle;
+    width: 25px; /* Sets width for SVG */
+    height: 25px; /* Sets height for SVG */
+    vertical-align: middle; /* Aligns SVG vertically */
 }
-  
+
+/* Account Styles */
 .account-img {
-    height: 125px;
-    width: 125px;
-    margin-right: 20px;
-    margin-bottom: 16px;
+    height: 125px; /* Sets height for account image */
+    width: 125px; /* Sets width for account image */
+    margin-right: 20px; /* Adds right margin for account image */
+    margin-bottom: 16px; /* Adds bottom margin for account image */
 }
-  
+
 .account-heading {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Sets font size for account heading */
 }
