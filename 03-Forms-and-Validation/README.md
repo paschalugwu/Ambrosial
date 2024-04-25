@@ -2,6 +2,7 @@
 
 This is a simple Flask application named 'Ambrosial'. It consists of several HTML templates, a CSS file for styling, and Python scripts for backend logic.
 
+```
 ├── README.md
 ├── flask_ambrosial.py
 ├── forms.py
@@ -13,7 +14,7 @@ This is a simple Flask application named 'Ambrosial'. It consists of several HTM
     ├── layout.html
     ├── login.html
     └── register.html
-
+```
 
 ## Application Structure
 
