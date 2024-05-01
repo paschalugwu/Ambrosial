@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- This block extends the base template "layout.html" and defines the content for the "content" block -->
+
+    {% for post in posts %}
+        <!-- This loop iterates through the "posts" variable passed to the template -->
+        <article class="media content-section">
+            <!-- Each post is displayed within an article tag with the "media" and "content-section" classes -->
+            <div class="media-body">
+                <!-- The main body of the post is contained within the "media-body" div -->
+                <div class="article-metadata">
+                    <!-- Metadata for the post, such as author and date -->
+                    <a class="mr-2" href="#">{{ post.author }}</a>
+                    <!-- Displays the author of the post -->
+                    <small class="text-muted">{{ post.date_posted }}</small>
+                    <!-- Displays the date the post was posted -->
+                </div>
+                <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+                <!-- Displays the title of the post as a clickable link -->
+                <p class="article-content">{{ post.content }}</p>
+                <!-- Displays the content of the post -->
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
