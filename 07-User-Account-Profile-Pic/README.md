@@ -1,27 +1,29 @@
 ### Ambrosial - User Account & Profile Picture Management App
 
 ```
-flask_ambrosial/
-│
-├── flask_ambrosial/
+├── README.md
+├── flask_ambrosial
 │   ├── __init__.py
 │   ├── forms.py
 │   ├── models.py
 │   ├── routes.py
-│   ├── static/
-│   │   └── main.css
-│   └── templates/
+│   ├── static
+│   │   ├── main.css
+│   │   └── profile_pics
+│   │       ├── 25646d3a1f450286.jpg
+│   │       ├── 3522ec35be4c968d.jpg
+│   │       ├── 3eae9671e8b95ec7.jpg
+│   │       └── default.jpg
+│   └── templates
+│       ├── about.html
 │       ├── account.html
 │       ├── home.html
 │       ├── layout.html
 │       ├── login.html
 │       └── register.html
-│
-├── venv/
-│
-├── run.py
-│
-└── README.md
+├── instance
+│   └── site.db
+└── run.py
 ```
 
 ---
