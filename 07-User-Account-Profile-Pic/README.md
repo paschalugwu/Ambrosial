@@ -1,109 +1,99 @@
-# Ambrosial - Login Authentication Flask App
+### Ambrosial - User Account & Profile Picture Management App
 
-## Overview
-This Flask web application, named Ambrosial, provides a platform for users to register, log in, log out, and view personalized account information. It includes user authentication, password hashing, and basic CRUD (Create, Read, Update, Delete) functionalities.
-
-## Project Structure
 ```
-.
-├── README.md
-├── flask_ambrosial
+flask_ambrosial/
+│
+├── flask_ambrosial/
 │   ├── __init__.py
 │   ├── forms.py
 │   ├── models.py
 │   ├── routes.py
-│   ├── static
+│   ├── static/
 │   │   └── main.css
-│   └── templates
-│       ├── about.html
+│   └── templates/
 │       ├── account.html
 │       ├── home.html
 │       ├── layout.html
 │       ├── login.html
 │       └── register.html
-├── instance
-│   └── site.db
-└── run.py
+│
+├── venv/
+│
+├── run.py
+│
+└── README.md
 ```
 
-## Setup and Usage
-1. **Environment Setup**
-   - Clone the repository.
-   - Create and activate a virtual environment:
-     ```
-     python3 -m venv venv
-     source venv/bin/activate  # For Linux/Mac
-     venv\Scripts\activate      # For Windows
-     ```
-   - Install the required dependencies:
-     ```
-     pip install -r requirements.txt
-     ```
+---
 
-2. **Database Setup**
-   - The SQLite database is used (`instance/site.db`).
-   - Initialize the database:
-     ```
-     flask db init
-     flask db migrate -m "Initial migration"
-     flask db upgrade
-     ```
+#### Introduction
 
-3. **Running the App**
-   - Start the Flask server:
-     ```
-     python run.py
-     ```
-   - The app will be accessible at `http://localhost:5000/`.
+Ambrosial is a Flask application designed to manage user accounts and facilitate profile picture uploads. It offers a seamless experience for users to register, log in, update their account information, and upload profile pictures. This README provides an in-depth overview of the application's structure, functionalities, and usage instructions.
 
-## Functionality
-- **Register**
-  - New users can create an account with a unique username and email.
-  - Passwords are securely hashed before storing in the database.
-  - Validation ensures no duplicate usernames or emails.
-  - Upon successful registration, users are redirected to the login page.
+---
 
-- **Login**
-  - Existing users can log in with their registered email and password.
-  - Passwords are checked against the hashed versions in the database.
-  - Remember Me option allows persistent login across sessions.
-  - Invalid login attempts display appropriate error messages.
+#### Application Structure
 
-- **Logout**
-  - Logged-in users can log out, terminating their session.
-  - Upon logout, users are redirected to the home page.
+The Ambrosial application is structured as follows:
 
-- **User Account**
-  - Authenticated users can view their account details.
-  - The account page displays the username of the logged-in user.
-  - Non-authenticated users are redirected to the login page.
+- **flask_ambrosial/**: The core directory containing application files and subdirectories.
+  - **\_\_init\_\_.py**: Initializes the Flask application.
+  - **forms.py**: Defines forms for user registration, login, and account update.
+  - **models.py**: Defines database models for user accounts.
+  - **routes.py**: Defines application routes and functionalities.
+  - **static/**: Stores static files like CSS.
+  - **templates/**: Contains HTML templates for rendering web pages.
+    - **account.html**: Displays user account information and allows for updates.
+    - **home.html**: Renders the home page with posts.
+    - **layout.html**: Base template providing the overall structure of web pages.
+    - **login.html**: Renders the login page.
+    - **register.html**: Renders the registration page.
+- **venv/**: Virtual environment directory.
+- **run.py**: Entry point for running the Flask application.
 
-- **Home and About Pages**
-  - The home page (`/home`) displays a list of posts.
-  - Each post includes the author, title, content, and date posted.
-  - The about page (`/about`) provides information about the Ambrosial app.
+---
 
-## File Descriptions
-- **run.py**
-  - Entry point of the application, runs the Flask app.
+#### Application Functionality
 
-- **flask_ambrosial**
-  - **\_\_init\_\_.py**
-    - Initializes the Flask app, configures extensions.
-  - **forms.py**
-    - Defines WTForms for user registration and login.
-  - **models.py**
-    - Defines database models for User and Post.
-  - **routes.py**
-    - Contains route definitions for the application.
-  - **static/main.css**
-    - CSS file for styling the templates.
-  - **templates/**
-    - Contains HTML templates for different pages.
+Ambrosial offers the following features:
 
-## Dependencies
-- Flask: Micro web framework for Python.
-- Flask-WTF: Simple integration of WTForms with Flask.
-- Flask-SQLAlchemy: Flask extension for SQLAlchemy, ORM tool.
-- Flask-Bcrypt: Flask extension for password hashing.
-- Flask-Login: Flask extension for managing user authentication.
+1. **Registration**: Users can sign up for an account by providing a username, email, and password. Passwords are securely hashed before storage.
+
+2. **Login**: Registered users can log in using their email and password credentials.
+
+3. **Account Management**: Logged-in users have the ability to update their username and email.
+
+4. **Profile Picture Upload**: Users can upload a profile picture during account registration or update.
+
+---
+
+#### How to Run
+
+To run the Ambrosial application, follow these steps:
+
+1. **Setup Environment**:
+   - Ensure Python and pip are installed on your system.
+
+2. **Create Virtual Environment**:
+   - Run `python3 -m venv venv` to create a virtual environment.
+
+3. **Activate Virtual Environment**:
+   - On Windows: `venv\Scripts\activate`
+   - On Unix or MacOS: `source venv/bin/activate`
+
+4. **Install Dependencies**:
+   - Run `pip install -r requirements.txt` to install required packages.
+
+5. **Run the Application**:
+   - Execute `python run.py` to start the Flask application.
+
+6. **Access the Application**:
+   - Open your web browser and navigate to `http://localhost:5000` to access Ambrosial.
+
+---
+
+#### Conclusion
+
+Ambrosial provides a robust solution for user account management and profile picture uploads within a Flask environment. Its structured architecture, intuitive functionalities, and clear usage instructions make it an ideal choice for developers looking to implement similar features in their web applications.
+
+---
