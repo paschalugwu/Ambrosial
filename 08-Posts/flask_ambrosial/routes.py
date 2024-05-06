@@ -4,49 +4,22 @@
 import secrets
 import os
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request
+from flask import render_template, url_for, flash, redirect, request, abort
 from flask_ambrosial import app, db, bcrypt
-from flask_ambrosial.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from flask_ambrosial.forms import RegistrationForm, LoginForm, UpdateAccountForm, PostForm
 from flask_ambrosial.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
 
-# Sample posts data (temporary)
-posts = [
-    {
-        'author': 'Ugwu Paschal',
-        'title': 'How to prepare Jollof Rice.',
-        'content': 'Jollof rice, a beloved West African dish, \
-            is a flavorful one-pot meal. Made from rice, \
-                tomatoes, onions, peppers, and aromatic spices, \
-                    it’s a staple during holidays, weddings, \
-                        and special events. Customize it with \
-                            your favorite veggies and pair it \
-                                with fried plantains for a \
-                                    delightful feast!',
-        'date_posted': 'April 18, 2024'
-    },
-    {
-        'author': 'Amarachi Nnanta',
-        'title': 'Prepare Egusi Soup Like A Pro.',
-        'content': 'Egusi soup, a Nigerian delicacy, \
-            is rich and flavorful. To prepare it like a pro, \
-                heat oil in a pot and sauté onions. Add \
-                    ingredients (except ground egusi) and boil \
-                        for 3 minutes. Stir in ground egusi, \
-                            adjusting water for desired \
-                                consistency. Cook on low heat \
-                                    for 15-20 minutes, and \
-                                        serve with yam, rice, \
-                                            or grilled meat.',
-        'date_posted': 'April 19, 2024'
-    }
-]
 
 @app.route("/")
 @app.route("/home")
 def home():
-    """Render the home page with posts."""
-    return render_template('home.html', posts=posts)
+    posts = Post.query.all()
+    image_files = []
+    for post in posts:
+        image_files.append(url_for('static', filename='post_pics/' + post.image_filename))
+    return render_template('home.html', posts=posts, image_files=image_files)
+
 
 @app.route("/about")
 def about():
@@ -156,7 +129,77 @@ def account():
                            image_file=image_file, form=form)
 
 
-@app.route("/post/new")
+@app.route("/post/new", methods=['GET', 'POST'])
 @login_required
 def new_post():
-    return render_template('create_post.html', title='New Post')
+    form = PostForm()
+    if form.validate_on_submit():
+        image_file = form.image_filename.data
+        if image_file:
+            # Save and process the uploaded image if provided
+            image_filename = secrets.token_hex(8)
+            _, f_ext = os.path.splitext(image_file.filename)
+            image_filename = image_filename + f_ext
+            image_path = os.path.join(app.root_path, 'static/post_pics', image_filename)
+            image_file.save(image_path)
+        else:
+            # Set image filename to an empty string if no image is uploaded
+            image_filename = ''
+
+        # Create a new post with the filename of the uploaded image
+        post = Post(title=form.title.data, content=form.content.data, image_filename=image_filename, author=current_user)
+        db.session.add(post)
+        db.session.commit()
+        flash('Your post has been created!', 'success')
+        return redirect(url_for('home'))
+    return render_template('create_post.html', title='New Post',
+                           form=form, legend='New Post')
+
+
+@app.route("/post/<int:post_id>")
+def post(post_id):
+    post = Post.query.get_or_404(post_id)
+    return render_template('post.html', title=post.title, post=post)
+
+
+@app.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
+@login_required
+def update_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        post.content = form.content.data
+        if form.image_filename.data:
+            # Save and process the uploaded image if provided
+            image_file = form.image_filename.data
+            image_filename = secrets.token_hex(8)
+            _, f_ext = os.path.splitext(image_file.filename)
+            image_filename = image_filename + f_ext
+            image_path = os.path.join(app.root_path, 'static/post_pics', image_filename)
+            image_file.save(image_path)
+            post.image_filename = image_filename
+        else:
+            post.image_filename = None  # Set image filename to None if no image is uploaded
+        db.session.commit()
+        flash('Your post has been updated', 'success')
+        return redirect(url_for('post', post_id=post.id))
+    elif request.method == 'GET':
+        form.title.data = post.title
+        form.content.data = post.content
+    return render_template('create_post.html', title='Update Post',
+                           form=form, legend='Update Post')
+
+
+@app.route("/post/<int:post_id>/delete", methods=['POST'])
+@login_required
+def delete_post(post_id):
+    post = Post.query.get_or_404(post_id)
+    if post.author != current_user:
+        abort(403)
+    db.session.delete(post)
+    db.session.commit()
+    flash('Your post has been deleted', 'success')
+    return redirect(url_for('home'))
