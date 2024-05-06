@@ -20,6 +20,22 @@ db_path = os.path.join(os.getcwd(), "instance/site.db")
 conn = sqlite3.connect(db_path)
 c = conn.cursor()
 
+# To search for all your posts
+c.execute("SELECT * FROM post WHERE user_id = ?", (your_user_id,))
+print(c.fetchall())
+
+# To list all registered users
+c.execute("SELECT * FROM user")
+print(c.fetchall())
+
+# To retrieve the dates posts were made
+c.execute("SELECT date_posted FROM post")
+print(c.fetchall())
+
+# To list images
+c.execute("SELECT image_file FROM user")
+print(c.fetchall())
+
 # Populate the Database
 # Insert data into the 'user' table
 c.execute("INSERT INTO user (username, email, image_file, password) VALUES (?, ?, ?, ?)", ('Ugwu Paschal', 'ugwu@example.com', 'default.jpg', 'password123'))
