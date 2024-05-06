@@ -157,3 +157,27 @@ recent_posts = c.fetchall()
 for post in recent_posts:
     print(f"Title: {post[1]}, Date Posted: {post[2]}")
 ```
+
+### Example 7: Paginate through posts
+```python
+import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('instance/site.db')
+c = conn.cursor()
+
+# Define pagination parameters
+page_number = 1  # The page number you want to retrieve
+posts_per_page = 10  # Number of posts per page
+offset = (page_number - 1) * posts_per_page  # Calculate the offset
+
+# Execute SQL query to select posts with pagination
+c.execute("SELECT * FROM post ORDER BY date_posted DESC LIMIT ? OFFSET ?", (posts_per_page, offset))
+
+# Fetch all rows
+paginated_posts = c.fetchall()
+
+# Print paginated post information
+for post in paginated_posts:
+    print(f"Title: {post[1]}, Date Posted: {post[2]}")
+```
