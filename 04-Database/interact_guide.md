@@ -73,3 +73,87 @@ conn.close()
 ```
 
 # This script demonstrates how to connect to a SQLite database, insert data into tables, retrieve data from tables, update records in a table, delete a record from a table, delete all records from tables, and close the database connection.
+
+# Other queries:
+### Example 1: Retrieve all users
+```python
+import sqlite3
+
+# Connect to the SQLite database
+conn = sqlite3.connect('instance/site.db')
+c = conn.cursor()
+
+# Execute SQL query to select all users
+c.execute("SELECT * FROM user")
+
+# Fetch all rows
+users = c.fetchall()
+
+# Print user information
+for user in users:
+    print(f"Username: {user[1]}, Email: {user[2]}")
+```
+
+### Example 2: Retrieve a specific user by ID
+```python
+# Execute SQL query to select a user by ID
+c.execute("SELECT * FROM user WHERE id=?", (1,))  # Replace 1 with the ID of the user you want to retrieve
+
+# Fetch the user
+user = c.fetchone()
+
+# Print user information
+print(f"Username: {user[1]}, Email: {user[2]}")
+```
+
+### Example 3: Retrieve all posts
+```python
+# Execute SQL query to select all posts
+c.execute("SELECT * FROM post")
+
+# Fetch all rows
+posts = c.fetchall()
+
+# Print post information
+for post in posts:
+    print(f"Title: {post[1]}, Content: {post[3]}")
+```
+
+### Example 4: Retrieve posts by a specific user
+```python
+# Execute SQL query to select posts by a specific user
+c.execute("SELECT * FROM post WHERE user_id=?", (1,))  # Replace 1 with the ID of the user you want to retrieve posts for
+
+# Fetch all rows
+posts = c.fetchall()
+
+# Print post information
+for post in posts:
+    print(f"Title: {post[1]}, Content: {post[3]}")
+```
+
+### Example 5: Retrieve posts by filtering with conditions
+```python
+# Execute SQL query to select posts based on conditions
+c.execute("SELECT * FROM post WHERE title LIKE ?", ('%example%',))
+
+# Fetch all rows
+filtered_posts = c.fetchall()
+
+# Print filtered post information
+for post in filtered_posts:
+    print(f"Title: {post[1]}, Content: {post[3]}")
+```
+
+### Example 6: Retrieve the most recent posts
+```python
+# Execute SQL query to select the most recent posts
+c.execute("SELECT * FROM post ORDER BY date_posted DESC LIMIT 10")
+
+# Fetch all rows
+recent_posts = c.fetchall()
+
+# Print recent post information
+for post in recent_posts:
+    print(f"Title: {post[1]}, Date Posted: {post[2]}")
+```
