@@ -5,6 +5,7 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
+from flask_migrate import Migrate
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -19,6 +20,9 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 # Create an SQLAlchemy database instance
 db = SQLAlchemy(app)
+
+# initialize Flask-Migrate
+migrate = Migrate(app, db)
 
 # Create a Bcrypt instance for password hashing
 bcrypt = Bcrypt(app)
