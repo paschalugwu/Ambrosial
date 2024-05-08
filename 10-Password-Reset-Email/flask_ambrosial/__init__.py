@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """Initialization of the Flask application and its extensions."""
 
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_migrate import Migrate
+from flask_mail import Mail
 
 # Initialize the Flask application
 app = Flask(__name__)
@@ -35,15 +37,12 @@ login_manager.login_view = 'login'
 
 # Configure the message category for flashing messages
 login_manager.login_message_category = 'info'
+app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USERNAME'] = os.environ.get('EMAIL_USER')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASS')
+mail = Mail(app)
 
 # Import routes module to ensure routes are registered
 from flask_ambrosial import routes
-
-""" Note: The routes module must be imported after creating \
-    the Flask app
-- This is to avoid circular imports, as routes might need \
-    to import things from this file
-- By importing routes after creating the app, the app instance \
-    is already defined and can be used in the routes module for \
-        defining the routes and their functionalities
-"""
