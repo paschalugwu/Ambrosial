@@ -1,47 +1,69 @@
-# Ambrosial Flask Application with Pagination
+**Ambrosial: A Flask-Based Social Media Platform**
 
-Welcome to the Ambrosial Flask Application README! This document serves as a comprehensive guide to understanding the structure, components, and functionalities of the Ambrosial Flask Application. In this updated version, we have implemented pagination to enhance the user experience by efficiently managing large amounts of content.
+**README**
 
-## Introduction
+---
 
-Ambrosial is a Flask web application designed to provide users with a platform for creating, sharing, and interacting with posts. It offers features such as user authentication, post creation, viewing posts from other users, updating account details, and more. With the recent addition of pagination, users can now navigate through posts more conveniently, especially when dealing with a large number of posts.
+### Overview
 
-## Project Structure
+Ambrosial is a social media platform built using Flask, a Python web framework. It provides users with features such as user registration, login, posting, profile management, and password reset functionality. This README provides a detailed overview of the project structure, functionality, and interactions between various components of the application.
 
-The project structure remains consistent with the previous version, with additional functionality incorporated into the existing components. Here's a brief overview:
+### Project Structure
 
-- **`flask_ambrosial` Package**: The main package containing Python modules, static files, and templates.
-  - `__init__.py`: Initializes the Flask application and its extensions.
-  - `forms.py`: Defines WTForms form classes for user input handling.
-  - `models.py`: Defines SQLAlchemy models for database interactions.
-  - `routes.py`: Defines routes for the Flask application, including pagination logic.
-  - `static/`: Directory containing static files such as CSS and user-uploaded images.
-  - `templates/`: Directory containing Jinja2 templates for HTML structure.
+The project structure follows a typical Flask application layout:
 
-- **`instance` Directory**: Contains the SQLite database file for the application (`site.db`).
+- **flask_ambrosial**: This directory contains the main application code.
+  - **\_\_init\_\_.py**: Initializes the Flask application and its extensions.
+  - **forms.py**: Defines Flask-WTF forms for user registration, login, account update, post creation, password reset request, and password reset.
+  - **models.py**: Defines SQLAlchemy database models for User and Post entities.
+  - **routes.py**: Defines the routes and views for the application.
+  - **templates/**: Contains HTML templates for rendering pages.
+  - **static/**: Contains static files such as CSS, JavaScript, and images.
+- **tests/**: Contains unit tests for testing various components of the application.
+- **venv/**: Virtual environment directory for managing dependencies.
 
-- **`migrations` Directory**: Contains Alembic migration scripts for database schema changes.
+### Functionality
 
-- **`run.py`**: Main entry point for running the Flask application.
+1. **User Registration and Login**:
+   - Users can register by providing a username, email, and password.
+   - Passwords are hashed using Bcrypt for security.
+   - Registered users can log in using their email and password.
 
-## Application Components
+2. **User Account Management**:
+   - Registered users can update their username, email, and profile picture.
+   - Profile pictures are resized and saved in the 'static/profile_pics' directory.
 
-### Pagination Implementation
+3. **Posting**:
+   - Logged-in users can create new posts with a title, content, and optional image upload.
+   - Posts are associated with the user who created them.
+   - Images uploaded with posts are saved in the 'static/post_pics' directory.
 
-The major enhancement in this version of Ambrosial is the implementation of pagination. Pagination allows users to navigate through a large number of posts efficiently by dividing them into separate pages. Here's how it works:
+4. **Password Reset**:
+   - Users who forget their passwords can request a password reset.
+   - An email with a password reset link is sent to the user's registered email address.
+   - The reset link contains a unique token generated using itsdangerous for security.
+   - Users can reset their password by providing a new password and confirming it.
 
-- **Pagination Logic in `routes.py`**: The `home()` route now includes pagination logic using the `paginate()` method provided by SQLAlchemy. This method divides the posts into pages based on a specified number of posts per page.
-  
-- **Updated Templates**: The `home.html` template now iterates over the paginated posts using the `.items` attribute and displays navigation links for navigating between pages.
-  
-- **Pagination for User Posts**: Additionally, pagination has been implemented for user-specific posts in the `user_posts.html` template. Users can now view their own posts paginated based on the specified number of posts per page.
+### Interactions and Behaviors
 
-### Other Components
+1. **User Registration and Login**:
+   - When a user registers, their information is validated, and if successful, a new user record is created in the database.
+   - During login, the user's credentials are validated, and if correct, they are logged in and redirected to the home page.
+   - If login fails, an error message is displayed.
 
-All other components such as user authentication, post creation, updating account details, etc., remain intact from the previous version. These components work seamlessly alongside the new pagination feature to provide a cohesive user experience.
+2. **User Account Management**:
+   - When a user updates their account information, the changes are validated and saved to the database.
+   - If the user uploads a new profile picture, it is resized and saved in the 'static/profile_pics' directory.
 
-## Conclusion
+3. **Posting**:
+   - When a user creates a new post, the post data is validated, and if successful, a new post record is created in the database.
+   - If an image is uploaded with the post, it is resized and saved in the 'static/post_pics' directory.
 
-With the addition of pagination, the Ambrosial Flask Application has evolved into a more user-friendly and scalable platform for creating and sharing posts. Users can now navigate through posts efficiently, making the application more accessible and enjoyable to use. The robust structure and clear separation of concerns continue to demonstrate the power and flexibility of Flask and its extensions.
+4. **Password Reset**:
+   - When a user requests a password reset, an email with a reset link is sent to their registered email address.
+   - The reset link contains a token that expires after a certain time (30 minutes by default).
+   - If the user resets their password within the allowed time frame, their password is updated, and they can log in with the new password.
 
-Thank you for exploring the Ambrosial Flask Application README. We hope this guide provides valuable insights into the application's functionalities and enhancements. If you have any questions or feedback, feel free to reach out to us. Happy blogging with Ambrosial!
+### Conclusion
+
+Ambrosial is a feature-rich social media platform built using Flask and various extensions. It provides users with a seamless experience for registration, login, posting, profile management, and password reset. The application's codebase is well-structured, and interactions between components are efficiently handled to ensure smooth functionality. With its intuitive user interface and robust features, Ambrosial offers a compelling platform for social networking and content sharing.
