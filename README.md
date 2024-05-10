@@ -4,11 +4,11 @@
 
 Ambrosial is a sophisticated Flask-based web application designed to provide users with a delightful platform for culinary enthusiasts to connect, share, and explore a world of flavors. With a focus on simplicity, functionality, and elegance, Ambrosial offers a seamless experience for users to discover new recipes, share their culinary creations, and engage with like-minded individuals.
 
-**Deployed Site**: [Ambrosial](https://ugwupaschal.pythonanywhere.com/)
-**Final Project Blog Article**: [Ambrosial Project - Blog Article](link_to_blog_article)
-**Authors**: 
-- [Paschal Ugwu - Backend Developer/Project Manager](https://github.com/paschalugwu)
-- [Amarachi Nnanta - Frontend Developer](https://github.com/Amastina1)
+- **Deployed Site**: [Ambrosial](https://ugwupaschal.pythonanywhere.com/)
+- **Final Project Blog Article**: [Ambrosial Project - Blog Article](link_to_blog_article)
+- **Authors**: 
+ - [Paschal Ugwu - Backend Developer/Project Manager](https://github.com/paschalugwu)
+ - [Amarachi Nnanta - Frontend Developer](https://github.com/Amastina1)
 
 ## Installation
 
