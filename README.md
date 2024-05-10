@@ -6,16 +6,18 @@ Ambrosial is a sophisticated Flask-based web application designed to provide use
 
 - **Deployed Site**: [Ambrosial](https://ugwupaschal.pythonanywhere.com/)
 - **Final Project Blog Article**: [Ambrosial Project - Blog Article](link_to_blog_article)
-- **Authors**: 
- - [Paschal Ugwu - Backend Developer/Project Manager](https://github.com/paschalugwu)
- - [Amarachi Nnanta - Frontend Developer](https://github.com/Amastina1)
+- **Authors**:
+```
+[Paschal Ugwu - Backend Developer/Project Manager](https://github.com/paschalugwu)
+[Amarachi Nnanta - Frontend Developer](https://github.com/Amastina1)
+```
 
 ## Installation
 
 To run Ambrosial locally, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/your_username/ambrosial.git`
-2. Navigate to the project directory: `cd ambrosial`
+1. Clone the repository: `git clone https://github.com/paschalugwu/Ambrosial.git`
+2. Navigate to the project directory: `cd Ambrosial`
 3. Install dependencies: `pip install -r requirements.txt`
 4. Set up environment variables (if necessary)
 5. Run the application: `python run.py`
