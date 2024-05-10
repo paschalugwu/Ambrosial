@@ -1,3 +1,4 @@
+```
 Package           Version
 ----------------- -------
 alembic           1.13.1
@@ -27,3 +28,4 @@ SQLAlchemy        2.0.29
 typing_extensions 4.11.0
 Werkzeug          3.0.2
 WTForms           3.1.2
+```
