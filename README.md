@@ -7,10 +7,8 @@ Ambrosial is a sophisticated Flask-based web application designed to provide use
 - **Deployed Site**: [Ambrosial](https://ugwupaschal.pythonanywhere.com/)
 - **Final Project Blog Article**: [Ambrosial Project - Blog Article](link_to_blog_article)
 - **Authors**:
-```
-[Paschal Ugwu - Backend Developer/Project Manager](https://github.com/paschalugwu)
-[Amarachi Nnanta - Frontend Developer](https://github.com/Amastina1)
-```
+1. [Paschal Ugwu - Backend Developer/Project Manager](https://github.com/paschalugwu)
+2. [Amarachi Nnanta - Frontend Developer](https://github.com/Amastina1)
 
 ## Installation
 
