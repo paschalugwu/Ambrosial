@@ -16,7 +16,7 @@ To run Ambrosial locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/paschalugwu/Ambrosial.git`
 2. Navigate to the project directory: `cd Ambrosial`
-3. Install dependencies: `pip install -r requirements.txt`
+3. Install dependencies: `pip install -r 01-Documentation/TOOLS.md`
 4. Set up environment variables (if necessary)
 5. Run the application: `python run.py`
 
